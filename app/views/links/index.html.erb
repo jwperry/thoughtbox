@@ -1,5 +1,6 @@
-  <h1>Links Index</h1><br /><br />
+<h1>Links Index</h1><br /><br />
 
+<h2>Create a New Link</h2>
 <%= form_for(:link, url: links_path) do |f| %>
   <br>
   <%= f.label :title %>
@@ -9,4 +10,17 @@
   <%= f.text_field :url %>
   <br>
   <%= f.submit "Create Link" %>
+<% end %><br /><br />
+
+<h2>My Links</h2>
+<% @links.each do |link| %>
+  <div class="link" id="link-<%=link.title%>">
+    <h4>Title: <%= link.title %></h4>
+    <h4>Link: <%= link.url %></h4>
+    <% if (link.read == false) %>
+      <button type="button" class="read-button">Mark as Read</button>
+    <% else %>
+      <button type="button" class="read-button">Mark as Unread</button>
+    <% end %>
+  </div>
 <% end %>
