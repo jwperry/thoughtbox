@@ -1,1 +1,12 @@
-  <h1>links index</h1>
+  <h1>Links Index</h1><br /><br />
+
+<%= form_for(:link, url: links_path) do |f| %>
+  <br>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <br>
+  <%= f.submit "Create Link" %>
+<% end %>
