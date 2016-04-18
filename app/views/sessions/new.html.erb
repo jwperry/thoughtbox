@@ -1,1 +1,14 @@
-  <h1>new sessions</h1>
+<h3>User Log In</h3>
+<%= form_for(:session, url: login_path) do |f| %>
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email, id: "form-value"%>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password, id: "form-value" %>
+  <br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, id: "form-value" %>
+  <br>
+  <%= f.submit "Log In" %>
+<% end %>
