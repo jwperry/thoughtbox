@@ -13,23 +13,28 @@
 <% end %><br /><br />
 
 <h2>My Links</h2>
-<% @links.each do |link| %>
+<div class="all-links">
+  <% @links.each do |link| %>
 
-  <div class="link" id="link-<%=link.title%>" data-link-id="<%=link.id%>">
-    <h4><span class="link-title">Title: <%= link.title %></span></h4>
+    <div class="link" id="link-<%=link.title%>" data-link-id="<%=link.id%>">
+      <h3>Search</h3>
+      <input type="text" id="search-bar"><br /><br />
 
-    <% if (link.read == false) %>
-      <h4><span class="link-url unread-link-url">Link: <%= link.url %></span></h4>
-      <button type="button" class="read-button">Mark as Read</button>
-      <button type="button" class="unread-button hidden">Mark as Unread</button>
+      <h4><span class="link-title">Title: <%= link.title %></span></h4>
 
-    <% else %>
-      <h4><span class="link-url read-link-url">Link: <%= link.url %></span></h4>
-      <button type="button" class="read-button hidden">Mark as Read</button>
-      <button type="button" class="unread-button">Mark as Unread</button>
-    <% end %>
-  </div>
+      <% if (link.read == false) %>
+        <h4><span class="link-url unread-link-url">Link: <%= link.url %></span></h4>
+        <button type="button" class="read-button">Mark as Read</button>
+        <button type="button" class="unread-button hidden">Mark as Unread</button>
 
-  <h3><%= link_to "Edit This Link", edit_link_path(link.id) %></h3><br />
+      <% else %>
+        <h4><span class="link-url read-link-url">Link: <%= link.url %></span></h4>
+        <button type="button" class="read-button hidden">Mark as Read</button>
+        <button type="button" class="unread-button">Mark as Unread</button>
+      <% end %>
+    </div>
 
-<% end %>
+    <h3><%= link_to "Edit This Link", edit_link_path(link.id) %></h3><br />
+
+  <% end %>
+</div>
