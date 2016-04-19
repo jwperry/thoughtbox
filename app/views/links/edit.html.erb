@@ -1,0 +1,11 @@
+<h3>Link Edit Form</h3>
+<%= form_for(@link, url: link_path(@link.id)) do |f| %>
+  <br>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :url %>
+  <%= f.password_field :url %>
+  <br>
+  <%= f.submit "Update Link" %>
+<% end %>
