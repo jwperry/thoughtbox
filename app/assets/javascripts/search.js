@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('#search-bar').on("keyup", function(event) {
-    var $allLinks = $(this).parent().parent();
+    var $allLinks = $('.all-links');
     var searchTerm = this.value.toLowerCase();
     
     $allLinks.children().each(function (index, link) {

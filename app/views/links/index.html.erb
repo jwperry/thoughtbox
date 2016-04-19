@@ -12,13 +12,13 @@
   <%= f.submit "Create Link" %>
 <% end %><br /><br />
 
+<h3>Search</h3>
+<input type="text" id="search-bar"><br /><br />
 <h2>My Links</h2>
 <div class="all-links">
   <% @links.each do |link| %>
 
     <div class="link" id="link-<%=link.title%>" data-link-id="<%=link.id%>">
-      <h3>Search</h3>
-      <input type="text" id="search-bar"><br /><br />
 
       <h4><span class="link-title">Title: <%= link.title %></span></h4>
 
