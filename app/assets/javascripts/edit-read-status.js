@@ -2,11 +2,25 @@ $(document).ready(function() {
   $('.read-button').on("click", function() {
     var $link = $('.link-url', $(this).parent());
     changeToRead.call(this, $link);
+    var linkId = $(this).parent().data("link-id");
+
+    $.ajax({
+      method: "PATCH",
+      url: "/links/" + linkId,
+      data: { link_id: linkId }
+    })
   });
 
   $('.unread-button').on("click", function() {
     var $link = $('.link-url', $(this).parent());
     changeToUnread.call(this, $link);
+    var linkId = $(this).parent().data("link-id");
+
+    $.ajax({
+      method: "PATCH",
+      url: "/links/" + linkId,
+      data: { link_id: linkId }
+    })
   });
 });
 

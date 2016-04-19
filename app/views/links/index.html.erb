@@ -14,7 +14,7 @@
 
 <h2>My Links</h2>
 <% @links.each do |link| %>
-  <div class="link" id="link-<%=link.title%>">
+  <div class="link" id="link-<%=link.title%>" data-link-id="<%=link.id%>">
     <h4><span class="link-title">Title: <%= link.title %></span></h4>
     <% if (link.read == false) %>
     <h4><span class="link-url unread-link-url">Link: <%= link.url %></span></h4>
